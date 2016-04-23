@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}<title>New Article</title>{% endblock %}
+
+{% block content %}
+  <h3 class="page-header">Add an Article</h3>
+  <form action="/add" method="POST">
+      <div class="form-group">
+        {% if error %}
+          <h5 class="alert">{{ error }}<h5>
+        {% endif %}
+        <input type="text" class="form-control" name="title" placeholder="Article Title">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="desc" placeholder="Description">
+      </div>
+      <div class="form-group">
+        <textarea rows="13" class="form-control" name="text" placeholder="Your Article"></textarea>
+      </div>
+      <button type="summit" class="btn btn-success">Create</button>
+    </div>
+  </form>
+{% endblock %}

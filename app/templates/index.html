@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}<title>Blogging</title>{% endblock %}
+
+{% block content %}
+ <header>
+  <div class="row page-header">
+    <h1>Latest Articles</h1>
+  </div>
+ </header>
+  <div class="row">
+    {% if articles %}
+    {% for article in articles %}
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <a href="/articles/{{ article.id }}">
+            <img src="{{ url_for('static', filename='img/articleDefault.jpeg') }}" class="img-responsive entrance-pic artic-1" alt="Article">
+          </a>
+          <div class="caption">
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.desc }}</p>
+            <a href="/account/{{ article.author_id }}">{{ article.author.nickname }}</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    {% else %}
+      <h2 align="center">No Articles to Show</h2>
+    {% endif %}
+  </div>
+
+{% endblock %}

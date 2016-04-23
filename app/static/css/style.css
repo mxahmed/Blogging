@@ -1,0 +1,17 @@
+.log-in{
+  margin-right:20px;
+}
+.panel-heading{
+  padding: 20px;
+}
+footer {
+  color: #2c3e50;
+  background-color: #f2f2f2;
+  padding: 15px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+.headerOfaection >h1{
+  color: #34495e;
+}

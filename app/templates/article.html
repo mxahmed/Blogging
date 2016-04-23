@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}<title>{{ article.title }}</title>{% endblock %}
+
+{% block content %}
+    <h1 align="center" class="page-header">{{ article.title }}</h1>
+    <p> {{ article.datetime }}</p>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <p class="panel-title">{{ article.desc }}</p>
+        <br>
+      </div>
+      <div class="panel-body">
+        <p>{{ article.text }}
+      </div>
+      <div class="panel-footer">Author: <a href="/accounts/{{ article.author_id }}">{{ article.author.nickname }}</a></div>
+    </div>
+{% endblock %}
